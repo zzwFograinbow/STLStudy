@@ -22,6 +22,7 @@ public:
 };
 int main()
 {
+    std::cout<<"000"<<std::endl;
     std::vector<int> v;
     v.push_back(10);
     v.push_back(20);
@@ -139,8 +140,25 @@ int main()
     std::cout<<vtext.size()<<std::endl;
 
     std::vector<int>(vtext).swap(vtext);
-    std::cout<<vtext.capacity()<<std::endl;
-    std::cout<<vtext.size()<<std::endl;
+   // std::cout<<vtext.capacity()<<std::endl;
+    //std::cout<<vtext.size()<<std::endl;
+
+/*二维vector的使用方式！！！！！！！*/
+    std::vector<std::vector<int>> matrix;
+    std::vector<int> B;
+    int m[3][3] = {{1,2,3},{4,5,6},{7,8,9}};
+    for(int ii = 0;ii<3;ii++)
+    {
+        for (int jj = 0; jj < 3; jj++) {
+            B.push_back(m[ii][jj]);
+
+        }
+        matrix.push_back(B);
+        B.clear();
+    }
+    std::cout<<"000"<<std::endl;
+    std::cout<<"matrix:"<<matrix.size()<<std::endl;
+    std::cout<<matrix[0].size()<<std::endl;
 
     return 0;
 }
