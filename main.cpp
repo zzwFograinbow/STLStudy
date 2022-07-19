@@ -98,10 +98,50 @@ int main()
     v33.assign(10,100);
     printVector(v33);
 
-    /*vector 容器的大小和容量*/
+    /*vector容器的 大小和容量*/
     std::cout<<v1.empty()<<std::endl;
     std::cout<<v1.capacity()<<std::endl;
     std::cout<<v1.size()<<std::endl;
+
+    /*vecotor容器的 插入和删除*/
+    v1.pop_back();
+    printVector(v1);
+
+    std::vector<int>::iterator it = v1.begin();
+    //it = v1.end();
+    //v1.insert(it-1,999);
+    //printVector(v1);
+
+    v1.erase(it,it+3);
+    printVector(v1);
+
+    std::vector<int> vtext;
+    int* pv = NULL;
+    int num = 0;
+    vtext.reserve(100000);
+    for(int p = 0;p<100000;p++)
+    {
+        vtext.push_back(p);
+        if(pv != &vtext[0]) //这段if代码是：判断系统开辟了多少次空间才满足这10w个数据
+        {                   //创建了一个空指针，如果不指向第一个数据的内存，则强制指向，然后次数+1，则可获得指向的次数。
+            pv = &vtext[0]; //如想要减少开辟次数，则用reserve().
+            num++;
+        }
+    }
+    std::cout<<num<<std::endl;
+
+    std::cout<<vtext.capacity()<<std::endl;
+    std::cout<<vtext.size()<<std::endl;
+
+    vtext.resize(3);
+
+    std::cout<<vtext.capacity()<<std::endl;
+    std::cout<<vtext.size()<<std::endl;
+
+    std::vector<int>(vtext).swap(vtext);
+    std::cout<<vtext.capacity()<<std::endl;
+    std::cout<<vtext.size()<<std::endl;
+
     return 0;
 }
 
