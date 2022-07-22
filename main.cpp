@@ -2,8 +2,9 @@
 #include <vector>
 #include <algorithm>
 #include <string>
-
+#include "string_study.h"
 void printVector(std::vector<int>&v);
+
 void show(int val)
 {
     std::cout<<val<<std::endl;
@@ -167,6 +168,10 @@ int main()
     std::cout<<"matrix:"<<matrix.size()<<std::endl;
     std::cout<<matrix[0].size()<<std::endl;
 
+    std::string str[] = {"ling","yi","er","san","si","wu","liu","qi","ba","jiu"};
+    std::cout<<str[6]<<std::endl;
+
+    Stringtext();
     return 0;
 }
 
