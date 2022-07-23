@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <string>
 #include "string_study.h"
+#include "deque_study.h"
 void printVector(std::vector<int>&v);
 
 void show(int val)
@@ -171,7 +172,12 @@ int main()
     std::string str[] = {"ling","yi","er","san","si","wu","liu","qi","ba","jiu"};
     std::cout<<str[6]<<std::endl;
 
+
+    /*String 学习*/
     Stringtext();
+
+    /*deque 学习*/
+    Dequetext();
     return 0;
 }
 
